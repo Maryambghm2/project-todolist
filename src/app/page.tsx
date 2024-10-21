@@ -1,25 +1,25 @@
-'use client'
-import TaskForm from "@/components/task/TaskForm";
-import TaskList from "@/components/task/TaskList";
-import { Tasks } from "@/components/Tasks";
-import { useTasks } from "@/hooks/useTasks";
-import { useState } from "react";
+import HeaderProp from '@/components/Header';
+import LinkTasks from '@/components/task/LinkTasks';
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "MB'S Application - Home",
+
+}
 
 export default function Home() {
-    
-    const { tasks, loading, error, addTask, deleteTask } = useTasks(); 
-  
-    if (loading) return <p>Chargement...</p>; 
-    if (error) return <p>Erreur: {error}</p>; 
-  
+
 
   return (
-    <main>
-      <div className="p-4">
-        <h1 className="text-2xl mb-4">Ma Liste de Tâches</h1>
-        <TaskForm onAddTask={addTask} />
-        <TaskList tasks={tasks} onDeleteTask={deleteTask} />
+    <>
+      <HeaderProp />
+      <div className='flex flex-col items-center justify-center h-screen '>
+        <div className=" flex flex-col gap-20 text-2xl text-gray-600 font-bold mb-4 ">
+          <h3>Bienvenue dans MB'S Application : </h3>
+          <h2><LinkTasks /></h2>
+        </div>
       </div>
-    </main>
+    </>
   );
 }
+

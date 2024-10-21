@@ -5,10 +5,13 @@ export default function Modal({ isOpen, onClose, children }: { isOpen: boolean; 
 
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
-            <div className="bg-white p-4 rounded">
+            <div className="bg-custom-gradient p-8 rounded shadow-md">
                 {children}
-                <button onClick={onClose} className="mt-4 p-2 bg-red-500 text-white rounded">Fermer</button>
+                <div className='flex justify-end mt-4'>
+                    <button onClick={onClose} className="mt-4 p-2 bg-customClairP text-white rounded hover:bg-customDarkP transition duration-300">Fermer</button>
+                </div>
             </div>
         </div>
     );
 }
+

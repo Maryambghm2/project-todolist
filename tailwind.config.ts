@@ -8,9 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        agdasima: ['Agdasima', 'sans-serif']
+      },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(135deg, #dbc3bd, #d1c8c1, #b1aef0)',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customPink: '#fca5a5',
+        customDarkP: '#7E7491',
+        customClairP:'#998CAF',
       },
     },
   },
